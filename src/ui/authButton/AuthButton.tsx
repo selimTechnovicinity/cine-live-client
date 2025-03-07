@@ -9,6 +9,7 @@ const AuthButton = () => {
 
   const handleLogout = () => {
     removeUser();
+    router.push("/login");
     router.refresh();
   };
   return (

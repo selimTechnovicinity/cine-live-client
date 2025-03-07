@@ -27,9 +27,11 @@ const Login = () => {
     try {
       const res = await userLogin(loginData);
       storeUserInfo({ accessToken: res?.data?.accessToken });
-      if (res?.data?.user?.email) {
-        toast.success("Logedin successfull");
-        router.push("/dashboard");
+      if (res?.status === "success") {
+        toast.success("Login successfull");
+        router.push("/users");
+      } else if (res?.success === false) {
+        toast.success(res?.message);
       }
     } catch (error) {}
   };

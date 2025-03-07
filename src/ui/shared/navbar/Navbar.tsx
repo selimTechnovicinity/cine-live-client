@@ -15,14 +15,19 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <h1 className="text-xl font-bold">Admin Panel</h1>
         <ul className="flex space-x-4">
-          <li>
+          {/* <li>
             <Link href="/dashboard" className="hover:underline">
               Dashboard
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/users" className="hover:underline">
               Users
+            </Link>
+          </li>
+          <li>
+            <Link href={`/users/edit`} className="hover:underline">
+              Update profile
             </Link>
           </li>
           <li>
